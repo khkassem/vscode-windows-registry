@@ -1,6 +1,6 @@
 {
   "name": "@vscode/windows-registry",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A native node module for accessing the windows registry",
   "os": [
     "win32"
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Microsoft/vscode-windows-registry.git"
+    "url": "git+https://github.com/khkassem/vscode-windows-registry.git"
   },
   "author": "Microsoft Corporation",
   "license": "MIT",
