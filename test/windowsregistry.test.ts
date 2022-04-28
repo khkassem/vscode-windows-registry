@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { GetStringRegKey } from '../dist/index';
+import { GetStringRegKey } from '../lib/index';
 import * as assert from 'assert';
 
 describe('Windows Registry Tests', () => {
