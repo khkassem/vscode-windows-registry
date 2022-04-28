@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { GetStringRegKey } from '../dist/index';
+import { GetStringRegKey, GetDWORDRegKey } from '../dist/index';
 import * as assert from 'assert';
 
 describe('Windows Registry Tests', () => {
@@ -39,6 +39,13 @@ describe('Windows Registry Tests', () => {
 				'HKEY_LOCAL_MACHINE',
 				'SOFTWARE\\Microsoft\\Windows\\CurrentVersion',
 				reallyLongString)));
+		});
+	});
+	describe('@GetDWORDRegKey', () => {
+		it('Retrieves the ProgramFilesPath registry value', () => {
+			const version = GetDWORDRegKey('HKEY_LOCAL_MACHINE', 'SOFTWARE\\Microsoft\\NET Framework Setup\\NDP\\v4\\Full\\', 'Release');
+			console.log(version)
+			assert(version !== '528372');
 		});
 	});
 });

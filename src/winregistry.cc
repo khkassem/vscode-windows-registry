@@ -181,13 +181,13 @@ napi_value GetDWORDRegKey(napi_env env, napi_callback_info info) {
     return nullptr;
   }
 
-  char szBuffer[512];
-  DWORD dwBufferSize = sizeof(szBuffer);
+  DWORD dwReturn;
+  DWORD dwBufSize = sizeof(DWORD);
 
   if (ERROR_SUCCESS == RegQueryValueEx(hKey, name.c_str(), 0, NULL,
-                                       (LPBYTE)szBuffer, &dwBufferSize)) {
+                                       reinterpret_cast<LPBYTE>(&dwReturn), &dwBufSize)) {
     char str[80];
-    sprintf(str, "%d", szBuffer);
+    sprintf(str, "%d", dwReturn);
     result = str;
   }
 
