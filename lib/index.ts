@@ -15,3 +15,12 @@ export function GetStringRegKey(hive: HKEY, path: string, name: string): string 
 	console.error('Could not initialize Windows Registry native node module.');
 	return undefined;
 }
+
+export function GetDWORDRegKey(hive: HKEY, path: string, name: string): string | undefined {
+	if (windowregistry) {
+		return windowregistry.GetDWORDRegKey(hive, path, name);
+	}
+
+	console.error('Could not initialize Windows Registry native node module.');
+	return undefined;
+}
