@@ -187,8 +187,8 @@ napi_value GetDWORDRegKey(napi_env env, napi_callback_info info) {
   if (ERROR_SUCCESS == RegQueryValueEx(hKey, name.c_str(), 0, NULL,
                                        (LPBYTE)szBuffer, &dwBufferSize)) {
     char str[80];
-    sprintf(char, "%d", szBuffer);
-    result = char;
+    sprintf(str, "%d", szBuffer);
+    result = str;
   }
 
   RegCloseKey(hKey);
