@@ -206,9 +206,9 @@ napi_value Init(napi_env env, napi_value exports) {
   napi_set_named_property(env, exports, "GetStringRegKey", getStringRegKey);
   
   napi_value getDWORDRegKey;
-  napi_create_function(env, "getDWORDRegKey", NAPI_AUTO_LENGTH,
-                       getDWORDRegKey, NULL, &getDWORDRegKey);
-  napi_set_named_property(env, exports, "getDWORDRegKey", getDWORDRegKey);
+  napi_create_function(env, "GetDWORDRegKey", NAPI_AUTO_LENGTH,
+                       GetDWORDRegKey, NULL, &getDWORDRegKey);
+  napi_set_named_property(env, exports, "GetDWORDRegKey", getDWORDRegKey);
 
   return exports;
 }
